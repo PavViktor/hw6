@@ -5,14 +5,19 @@
 
 Console.Write("Enter numbers separated by spaces: ");
 int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-int count = 0;
- 
-for (int i = 0; i < arr.Length; i++)
-{
-    if (arr[i] > 0)
-    {
-        count++;
-    }
-}
- 
+int count = countGreatherThenZero(arr);
 Console.WriteLine($"numbers count > 0: {count}");
+int countGreatherThenZero(int[] arr) 
+{
+  int count = 0;
+  
+  for (int i = 0; i < arr.Length; i++)
+  {
+        if (arr[i] > 0)
+        {
+            count++;
+        }
+  }
+
+  return count;
+}
